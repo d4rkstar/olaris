@@ -1,0 +1,9 @@
+Subcommand: nuv ide2
+
+Usage:
+    ide2 devel [--dry-run]
+    ide2 deploy [<action>] [--dry-run]
+
+Commands:
+    ide2 devel               activate development mode
+    ide2 deploy              deploy everything or just one action

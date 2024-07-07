@@ -25,3 +25,4 @@ TODO.txt
 .task/
 attic.txt
 **/venv/
+**/node_modules/*
