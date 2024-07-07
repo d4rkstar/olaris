@@ -36,6 +36,10 @@ tasks:
       - test -e ~/.wskprops || die "please run 'nuv ide login' first"
       - test -n "$NUVDEV_HOST" || die "please run 'nuv ide login' first"
       - |
+        if ! test -d "$NUV_ROOT/ide2/deploy/node_modules"
+          then cd $NUV_ROOT/ide2/deploy && bun install
+        fi
+      - |
         if test -e "$NUV_PWD/package.json"
         then if ! test -d "$NUV_PWD/node_modules"
              then cd $NUV_PWD ; npm install
@@ -104,7 +108,8 @@ tasks:
         if cat /proc/version | grep -i microsoft
         then export WATCHFILES_FORCE_POLLING=1
         fi
-        python3 -m deploy "$NUV_PWD" -w $DRY
+        #python3 -m deploy "$NUV_PWD" -w $DRY
+        bun {{.TASKFILE_DIR}}/deploy/index.js "$NUV_PWD" -w $DRY
         #npm-run-all --parallel deploy serve
         true
 
