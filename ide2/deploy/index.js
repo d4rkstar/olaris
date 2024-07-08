@@ -1,6 +1,4 @@
-import { spawn, execSync } from 'child_process';
-import { existsSync, readFileSync, writeFileSync, mkdirSync, unlinkSync } from 'fs';
-import { join } from 'path';
+import { existsSync, writeFileSync, mkdirSync, unlinkSync } from 'fs';
 import { createServer } from 'net';
 import process from 'process';
 import { program } from 'commander';
