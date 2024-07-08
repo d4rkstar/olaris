@@ -19,7 +19,7 @@ const { spawnSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 
-const MAINS = ["__main__.py", "index.js", "index.php"];
+const MAINS = ["__main__.py", "index.js", "index.php", "main.go"];
 
 let dryRun = false;
 

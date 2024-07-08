@@ -29,7 +29,8 @@ export async function scan() {
   const defaultReqsGlobs = [
     "packages/*/*/requirements.txt",
     "packages/*/*/package.json",
-    "packages/*/*/composer.json"
+    "packages/*/*/composer.json",
+    "packages/*/*/go.mod"
   ];
   const packageGlobs = getNuvolarisConfig("requirements", defaultReqsGlobs);
   const reqs = [];
@@ -55,7 +56,8 @@ export async function scan() {
   const defaultMainsGlobs = [
     "packages/*/*/index.js",
     "packages/*/*/__main__.py",
-    "packages/*/*/index.php"
+    "packages/*/*/index.php",
+    "packages/*/*/main.go"
   ];
   const mainsGlobs = getNuvolarisConfig("mains", defaultMainsGlobs);
   const mains = [];
@@ -81,7 +83,8 @@ export async function scan() {
   const defaultSinglesGlobs = [
     "packages/*/*.py",
     "packages/*/*.js",
-    "packages/*/*.php"
+    "packages/*/*.php",
+    "packages/*/*.go"
   ];
   const singlesGlobs = getNuvolarisConfig("singles", defaultSinglesGlobs);
   const singles = [];
